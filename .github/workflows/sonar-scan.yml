@@ -22,7 +22,6 @@ jobs:
       with:
         projectBaseDir: .
         args: >
-          -Dsonar.organization=my-org
           -Dsonar.projectKey=sonar-qube
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
