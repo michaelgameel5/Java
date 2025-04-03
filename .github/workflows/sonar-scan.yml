@@ -23,6 +23,7 @@ jobs:
         projectBaseDir: .
         args: >
           -Dsonar.projectKey=sonar-qube
+          -Dsonar.java.binaries=target/classes
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}       # From SonarQube → User → Tokens
         SONAR_HOST_URL: http://127.0.0.1:9000/        # IPv4, no trailing path
