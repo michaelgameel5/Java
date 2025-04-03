@@ -7,3 +7,11 @@ public class Hello {
         
     }
 }
+
+public class UserRepository {
+    // SonarQube will flag: 'Prevent SQL injection'
+    public User getUser(String username, Statement statement) throws SQLException {
+        String query = "SELECT * FROM users WHERE username = '" + username + "'";  // Vulnerability: S3649
+        return statement.executeQuery(query);
+    }
+}
