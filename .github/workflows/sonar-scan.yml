@@ -23,6 +23,7 @@ jobs:
         projectBaseDir: .
         args: >
           -Dsonar.projectKey=sonar-qube
+          -Dsonar.java.binaries=target/classes  # Required for Java analysis
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: http://127.0.0.1:9000/
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}       # From SonarQube → User → Tokens
+        SONAR_HOST_URL: http://127.0.0.1:9000/        # IPv4, no trailing path
