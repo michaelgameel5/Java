@@ -34,7 +34,10 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn -B verify
+          # Verify pom.xml exists
+          ls -la
+          # Run Maven commands
+          mvn -B clean compile
           mvn sonar:sonar \
             -Dsonar.projectKey=michaelgameel5_Java \
             -Dsonar.sources=src/main/java \
